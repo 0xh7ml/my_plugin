@@ -23,6 +23,7 @@ function bogo(){
                             	$_product = $values['data'];
                         if ($_product->get_id() == $gift_product_id)
                                 $found = true;
+				$woocommerce->cart->remove_cart_item($gift_product_id);
                         }
                         if(!$found){
                             $woocommerce->cart->add_to_cart($gift_product_id);
